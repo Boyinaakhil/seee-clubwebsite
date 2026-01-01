@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 async function verifyAdmin() {
   try {
     // Connect to MongoDB Atlas
-    await mongoose.connect('mongodb+srv://akhilboyina:akhilboyina@cluster0.0hrayz5.mongodb.net/SEEE', {
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

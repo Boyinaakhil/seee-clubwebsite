@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-const MONGODB_URI = 'mongodb+srv://akhilboyina:akhilboyina@cluster0.0hrayz5.mongodb.net/SEEE';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 async function createDefaultAdmin() {
   try {

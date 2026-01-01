@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // ADD /api here
+  baseURL: 'https://seee-clubwebsite.onrender.com/api', // ADD /api here
   headers: {
     'Content-Type': 'application/json',
   },

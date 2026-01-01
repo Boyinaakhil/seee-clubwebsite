@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-const MONGODB_URI = 'mongodb+srv://akhilboyina:akhilboyina@cluster0.0hrayz5.mongodb.net/SEEE';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 async function verifyAllAdmins() {
   console.log('==========================================');
@@ -90,7 +90,7 @@ async function verifyAllAdmins() {
         console.log('   🌐 Testing API login...');
         try {
           const axios = require('axios');
-          const response = await axios.post('http://localhost:5000/api/auth/login', {
+          const response = await axios.post('https://seee-clubwebsite.onrender.com/api/auth/login', {
             username: admin.username,
             password: foundPassword
           }, { timeout: 5000 });

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const readline = require('readline');
 
-const MONGODB_URI = 'mongodb+srv://akhilboyina:akhilboyina@cluster0.0hrayz5.mongodb.net/SEEE';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Create interface for user input
 const rl = readline.createInterface({
