@@ -1,9 +1,15 @@
-// create-admin.js - Working version
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const readline = require('readline');
 
 const MONGODB_URI = process.env.MONGODB_URI;
+
+if (!MONGODB_URI) {
+  console.error('❌ MONGODB_URI is missing. Check your .env file');
+  process.exit(1);
+}
+
 
 // Create interface for user input
 const rl = readline.createInterface({

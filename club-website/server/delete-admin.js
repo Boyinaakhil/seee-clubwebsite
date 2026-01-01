@@ -1,6 +1,14 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const readline = require('readline');
 
 const MONGODB_URI = process.env.MONGODB_URI;
+
+if (!MONGODB_URI) {
+  console.error('❌ MONGODB_URI is missing. Check your .env file');
+  process.exit(1);
+}
 
 async function deleteAdmin(username) {
   try {
