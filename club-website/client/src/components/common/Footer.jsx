@@ -27,6 +27,11 @@ const Footer = () => {
           Designed & Developed for Academic and Student Engagement Purposes
         </p>
 
+        {/* ✅ Developer Credit */}
+        <p style={{ marginTop: '0.75rem', fontSize: '0.9rem', color: '#95a5a6' }}>
+          Website developed by <strong>LSSSV PRASAD MEETAKOTI &amp; CO.</strong>
+        </p>
+
       </div>
     </footer>
   );
