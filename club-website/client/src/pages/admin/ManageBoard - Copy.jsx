@@ -8,8 +8,7 @@ const [formData, setFormData] = useState({
 name: '',
 position: '',
 department: '',
-email: '',
-image: null
+email: ''
 });
 const [editingId, setEditingId] = useState(null);
 
@@ -36,27 +35,27 @@ setFormData({
 };
 
 const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  const data = new FormData();
-  data.append("name", formData.name);
-  data.append("position", formData.position);
-  data.append("department", formData.department);
-  data.append("email", formData.email);
-  data.append("image", formData.image);
-
-  try {
-    if (editingId) {
-      await api.put(`/board/${editingId}`, data);
-    } else {
-      await api.post("/board", data);
-    }
-
-    fetchBoardMembers();
-  } catch (error) {
-    console.error(error);
+e.preventDefault();
+try {
+  if (editingId) {
+    await api.put(`/board/${editingId}`, formData);
+  } else {
+    await api.post('/board', formData);
   }
+  
+  setFormData({
+    name: '',
+    position: '',
+    department: '',
+    email: ''
+  });
+  setEditingId(null);
+  fetchBoardMembers();
+} catch (error) {
+  console.error('Error saving board member:', error);
+}
 };
+
 const handleEdit = (member) => {
 setFormData({
 name: member.name,
@@ -141,17 +140,6 @@ return (
             required
           />
         </div>
-        <div className="form-group">
-  <label className="form-label">Profile Image</label>
-  <input
-    type="file"
-    name="image"
-    className="form-input"
-    onChange={(e) =>
-      setFormData({ ...formData, image: e.target.files[0] })
-    }
-  />
-</div>
       </div>
       
       <button type="submit" className="btn btn-primary">
@@ -186,7 +174,6 @@ return (
       <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1rem' }}>
         <thead>
           <tr style={{ backgroundColor: '#f8f9fa' }}>
-            <th style={{ padding: '1rem', textAlign: 'left' }}>Photo</th>
             <th style={{ padding: '1rem', textAlign: 'left' }}>Name</th>
             <th style={{ padding: '1rem', textAlign: 'left' }}>Position</th>
             <th style={{ padding: '1rem', textAlign: 'left' }}>Department</th>
@@ -197,20 +184,11 @@ return (
         <tbody>
           {boardMembers.map((member) => (
             <tr key={member._id} style={{ borderBottom: '1px solid #eee' }}>
-              <td>
-              <img
-                src={`http://localhost:5000/uploads/${member.image}`}
-                width="50"
-                height="50"
-                style={{ borderRadius: "50%" }}
-              />
-            </td>
-            <td style={{ padding: '1rem' }}>{member.name}</td>
+              <td style={{ padding: '1rem' }}>{member.name}</td>
               <td style={{ padding: '1rem' }}>{member.position}</td>
               <td style={{ padding: '1rem' }}>{member.department}</td>
               <td style={{ padding: '1rem' }}>{member.email}</td>
               <td style={{ padding: '1rem' }}>
-
                 <button 
                   onClick={() => handleEdit(member)}
                   className="btn btn-primary"

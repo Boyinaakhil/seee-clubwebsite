@@ -532,7 +532,7 @@ const ManageEvents = () => {
               <div key={event._id} className="card" style={{ padding: '1rem' }}>
                 <div style={{
                   height: '150px',
-                  backgroundImage: `url('http://localhost:5000${event.imageUrl}')`,
+                  backgroundImage: `url('${event.imageUrl}')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   borderRadius: '8px',

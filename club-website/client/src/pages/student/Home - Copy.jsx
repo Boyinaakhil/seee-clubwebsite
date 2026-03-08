@@ -1,25 +1,22 @@
 import { Link } from 'react-router-dom';
-import HeroCarousel from '../../components/common/HeroCarousel';
+
 const Home = () => {
   return (
     <div className="home-page">
-<div className="hero-section">
+      {/* Hero Section */}
+      <div className="hero-section">
+        <div className="hero-content">
+          <h1>Welcome to SEEE Club</h1>
+          <p>Department of Electrical & Electronics Engineering</p>
+          <p>Where Innovation Meets Excellence</p>
+          <Link to="/about">
+            <button className="btn btn-primary" style={{ marginTop: '1rem' }}>
+              Discover More
+            </button>
+          </Link>
+        </div>
+      </div>
 
-  <HeroCarousel />
-
-  <div className="hero-content">
-    <h1>Welcome to SEEE Club</h1>
-    <p>Department of Electrical & Electronics Engineering</p>
-    <p>Where Innovation Meets Excellence</p>
-
-    <Link to="/about">
-      <button className="btn btn-primary">
-        Discover More
-      </button>
-    </Link>
-  </div>
-
-</div>
       {/* Main Content */}
       <div className="page-container">
         {/* About Card */}

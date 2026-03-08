@@ -21,15 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ✅ SERVE UPLOADS FIRST
-app.use(
-  '/uploads',
-  express.static(path.join(__dirname, 'public/uploads'), {
-    setHeaders: (res) => {
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
-    }
-  })
-);
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 // API Routes
 app.use('/api/auth', authRoutes);

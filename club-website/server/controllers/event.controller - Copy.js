@@ -29,7 +29,6 @@ const getEventById = async (req, res) => {
 
 const createEvent = async (req, res) => {
   try {
-    console.log("FILE RECEIVED:", req.file);
     console.log('Creating event with data:', req.body);
     console.log('Uploaded file:', req.file);
     
@@ -159,21 +158,13 @@ const deleteEvent = async (req, res) => {
     }
 
     // Delete image file if it exists locally
-if (event.imageUrl && event.imageUrl.startsWith('/uploads/')) {
-
-  const imagePath = path.join(
-    __dirname,
-    '..',
-    'public',
-    event.imageUrl.replace('/uploads/', 'uploads/')
-  );
-
-  if (fs.existsSync(imagePath)) {
-    fs.unlinkSync(imagePath);
-    console.log("Deleted image:", imagePath);
-  }
-
-}
+    if (event.imageUrl && event.imageUrl.startsWith('/uploads/')) {
+      const imagePath = path.join(__dirname, '..', '..', 'public', event.imageUrl);
+      if (fs.existsSync(imagePath)) {
+        fs.unlinkSync(imagePath);
+        console.log('Deleted image file:', imagePath);
+      }
+    }
 
     // Delete event from database
     await Event.findByIdAndDelete(id);
