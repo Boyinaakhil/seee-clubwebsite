@@ -1,26 +1,3 @@
-import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-
-import e1 from '../../assets/Events/event1.jpeg';
-import e2 from '../../assets/Events/event2.jpeg';
-import e3 from '../../assets/Events/event3.jpeg';
-import e4 from '../../assets/Events/event4.jpeg';
-import e5 from '../../assets/Events/event5.jpeg';
-import e6 from '../../assets/Events/event6.jpeg';
-
-import g1a from '../../assets/Events/gallery/g1a.jpeg';
-import g1b from '../../assets/Events/gallery/g1b.jpeg';
-import g2a from '../../assets/Events/gallery/g2a.jpeg';
-import g2b from '../../assets/Events/gallery/g2b.jpeg';
-import g3a from '../../assets/Events/gallery/g3a.jpeg';
-import g3b from '../../assets/Events/gallery/g3b.jpeg';
-import g3c from '../../assets/Events/gallery/g3c.jpeg';
-import g4a from '../../assets/Events/gallery/g4a.jpeg';
-import g5a from '../../assets/Events/gallery/g5a.jpeg';
-import g5b from '../../assets/Events/gallery/g5b.jpeg';
-import g6a from '../../assets/Events/gallery/g6a.jpeg';
-import g6b from '../../assets/Events/gallery/g6b.jpeg';
-
 const staticEvents = [
   {
     _id: '1',
@@ -30,82 +7,117 @@ const staticEvents = [
     venue: 'Civil Seminar Hall',
     category: 'Social',
     Organized_by: 'SEEE Members',
-    description: "Installation Day was celebrated with great joy, excitement, and active participation from students. The event began with an introduction highlighting the importance of the EEE Department and the EEE Club.",
-    detailedDescription: "Installation Day was celebrated with great joy, excitement, and active participation from students. The event began with an introduction highlighting the importance of the EEE Department and the EEE Club.\n\nCertificates and badges were presented to seniors, while badges were awarded to juniors by the professors. Fun activities such as movie riddles, electrical riddles, and mimicry added excitement to the event.\n\nJuniors were also rewarded with gifts for their participation in the Chart Competition. The event continued with an energetic dance performance and concluded on a joyful and inspiring note.",
-    registrationLink: '',
-    imageUrl: e1,
-    gallery: [e1, g1a, g1b],
+    description:
+      "Installation Day was celebrated with great joy and active participation from students.",
+    detailedDescription:
+      "Installation Day was celebrated with great joy and excitement. Certificates and badges were presented to seniors while juniors received badges from professors. Fun activities like movie riddles and mimicry were conducted.",
+    imageUrl: "/events/event1.jpeg",
+    gallery: [
+      "/events/event1.jpeg",
+      "/events/gallery/g1a.jpeg",
+      "/events/gallery/g1b.jpeg"
+    ]
   },
+
   {
     _id: '2',
-    title: 'Chart Competition on behalf of Club Installation Ceremony',
+    title: 'Chart Competition',
     date: '2025-08-21',
     time: '2:30 PM',
     venue: 'Civil Seminar Hall (B8-301)',
     category: 'Social',
     Organized_by: 'SEEE Members',
-    description: "Installation Day was celebrated with active student participation. A Chart Competition was conducted where students showcased electrical engineering concepts.",
-    detailedDescription: "Installation Day was celebrated with active student participation. The program began with an introduction to the EEE Department and EEE Club.\n\nCertificates and badges were presented to seniors, and badges were given to juniors by the professors. A Chart Competition was conducted where students showcased electrical engineering concepts.\n\nFun activities like movie riddles, electrical riddles, and mimicry added excitement. The event ended with a dance performance and concluded on a joyful note.",
-    registrationLink: '',
-    imageUrl: e2,
-    gallery: [e2, g2a, g2b],
+    description:
+      "Chart Competition where students presented electrical engineering concepts.",
+    detailedDescription:
+      "Students showcased electrical engineering concepts through charts. Fun activities and games were also conducted.",
+    imageUrl: "/events/event2.jpeg",
+    gallery: [
+      "/events/event2.jpeg",
+      "/events/gallery/g2a.jpeg",
+      "/events/gallery/g2b.jpeg"
+    ]
   },
+
   {
     _id: '3',
-    title: "Teacher's Day & Engineer's Day Celebration",
+    title: "Teacher's Day & Engineer's Day",
     date: '2025-09-16',
     time: '2:00 PM',
     venue: 'Mini Auditorium (B10-203)',
     category: 'Social',
     Organized_by: 'SEEE Members',
-    description: "Teacher's Day and Engineer's Day were celebrated to highlight the importance of teachers and engineers in shaping society.",
-    detailedDescription: "Teacher's Day and Engineer's Day were celebrated to highlight the importance of teachers and engineers in shaping society. The program began with an introduction on the role of teachers and the history of Engineer's Day, including the contributions of Sir M. Visvesvaraya.\n\nVarious fun activities such as song riddles, singing, scientist riddles, and games were conducted to engage students. Winners of indoor and outdoor games were awarded prizes.\n\nTeachers were honored with gifts as a token of appreciation. The event concluded joyfully with a cake-cutting ceremony with the teachers.",
-    registrationLink: '',
-    imageUrl: e3,
-    gallery: [e3, g3a, g3b, g3c],
+    description:
+      "Celebration of Teacher's Day and Engineer's Day.",
+    detailedDescription:
+      "Students conducted activities like riddles, singing and games to celebrate teachers and engineers.",
+    imageUrl: "/events/event3.jpeg",
+    gallery: [
+      "/events/event3.jpeg",
+      "/events/gallery/g3a.jpeg",
+      "/events/gallery/g3b.jpeg",
+      "/events/gallery/g3c.jpeg"
+    ]
   },
+
   {
     _id: '4',
-    title: "Fresher's Day",
+    title: "Freshers Day",
     date: '2025-11-13',
     time: '11:00 AM',
     venue: 'Main Auditorium',
     category: 'Social',
     Organized_by: 'SEEE Members',
-    description: "Freshers' Day was organized to warmly welcome the new students and help them feel comfortable in the department.",
-    detailedDescription: "Freshers' Day was organized to warmly welcome the new students and help them feel comfortable in the department. The event began with an introduction to the department and faculty members.\n\nSenior students shared their experiences and guidance with the freshers. Various fun activities, games, and cultural performances such as singing and dancing were conducted, creating a lively atmosphere.\n\nFaculty members motivated the freshers to focus on their studies and skill development. The event concluded on a joyful note, leaving the freshers with memorable experiences.",
-    registrationLink: '',
-    imageUrl: e4,
-    gallery: [e4],
+    description:
+      "Freshers Day to welcome new students.",
+    detailedDescription:
+      "Senior students guided freshers and several cultural programs were conducted.",
+    imageUrl: "/events/event4.jpeg",
+    gallery: [
+      "/events/event4.jpeg",
+      "/events/gallery/g4a.jpeg"
+    ]
   },
+
   {
     _id: '5',
-    title: 'Power Tech Fusion Expo',
+    title: "Power Tech Fusion Expo",
     date: '2025-05-15',
     time: '9:00 AM',
     venue: 'Main Auditorium',
     category: 'Technical',
     Organized_by: 'SEEE Members',
-    description: "Power Tech Fusion Expo was organized to showcase innovative ideas and technical knowledge in Electrical and Electronics Engineering.",
-    detailedDescription: "Power Tech Fusion Expo was organized to showcase innovative ideas and technical knowledge in Electrical and Electronics Engineering. Students presented various technical projects, models, and ideas related to power systems and emerging technologies.\n\nThe event provided a platform for students to demonstrate their creativity and technical skills. Faculty members and visitors interacted with participants and appreciated their work.\n\nThe expo concluded successfully, inspiring students to explore innovation and real-world engineering applications.",
-    registrationLink: '',
-    imageUrl: e5,
-    gallery: [e5, g5a, g5b],
+    description:
+      "Expo showcasing technical projects in Electrical Engineering.",
+    detailedDescription:
+      "Students presented innovative projects and models related to power systems.",
+    imageUrl: "/events/event5.jpeg",
+    gallery: [
+      "/events/event5.jpeg",
+      "/events/gallery/g5a.jpeg",
+      "/events/gallery/g5b.jpeg"
+    ]
   },
+
   {
     _id: '6',
-    title: 'Retrofitting',
+    title: "Retrofitting Workshop",
     date: '2026-01-23',
     time: '2:00 PM',
     venue: 'Beside B0-101',
     category: 'Workshop',
     Organized_by: 'SEEE Members & IEEE SB PES Members',
-    description: "A Retrofitting workshop was organized in collaboration with Naturays EV to create awareness about electric vehicles and sustainable mobility.",
-    detailedDescription: "A Retrofitting workshop was organized in collaboration with Naturays EV to create awareness about electric vehicles and sustainable mobility. The session introduced the concept of converting petrol vehicles into electric vehicles.\n\nMr. Siva Jagarapu, Managing Director of Naturays EV, explained the importance of eco-friendly transportation. Students learned about EV components, working principles, and observed a live demonstration of EV conversion.\n\nThe workshop provided valuable insights into future trends in electric mobility and sustainable engineering solutions.",
-    registrationLink: '',
-    imageUrl: e6,
-    gallery: [e6, g6a, g6b],
-  },
+    description:
+      "Workshop on converting petrol vehicles to electric vehicles.",
+    detailedDescription:
+      "Naturays EV explained EV components and live EV conversion demonstration.",
+    imageUrl: "/events/event6.jpeg",
+    gallery: [
+      "/events/event6.jpeg",
+      "/events/gallery/g6a.jpeg",
+      "/events/gallery/g6b.jpeg"
+    ]
+  }
 ];
 
 const EventDetail = () => {
